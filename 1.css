@@ -1,404 +1,282 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #263238;
-    background: #ffffff;
-    font-size: 13px;
-    line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #212529;
 }
 
-a {
-    text-decoration: none;
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
-/* THANH MENU */
-.header {
-    background: #1473f9;
-    color: white;
-    height: 50px;
-    padding: 0 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar-brand {
+  letter-spacing: 0.3px;
 }
 
-.logo {
-    font-size: 17px;
-    font-weight: bold;
-    white-space: nowrap;
+.navbar .nav-link {
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  transition: color 0.2s ease;
 }
 
-.menu {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ece9de;
 }
 
-.menu a {
-    color: white;
-    font-size: 12px;
-    transition: 0.3s;
+.hero-section {
+  background-image: url("../image/images.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 80vh;
+  position: relative;
+  padding: 70px 0;
 }
 
-.menu a:hover {
-    color: #ffe16b;
-}
-.hero {
-    min-height: 400px;
-    background-image:
-        linear-gradient(
-            rgba(0, 30, 50, 0.25),
-            rgba(0, 30, 50, 0.35)
-        ),
-        url("trangchu.png");
-
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 40px 20px;
-}
-
+/* Nội dung nằm trên ảnh nền */
 .hero-content {
-    max-width: 900px;
+  position: relative;
+  z-index: 1;
 }
 
-.hero h1 {
-    font-size: clamp(30px, 4vw, 54px);
-    line-height: 1.2;
-    margin-bottom: 15px;
-    font-weight: bold;
+.hero-section h1 {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.hero p {
-    font-size: 15px;
-    margin-bottom: 25px;
+.hero-description {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.05rem;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
 }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
+/* Hiệu ứng nút bấm */
+.hero-section .btn {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 22px;
-    border-radius: 7px;
-    font-weight: bold;
-    transition: 0.3s;
+.hero-section .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
 }
 
-.btn-yellow {
-    background: #ffc400;
-    color: #222;
+/* 4. BA TÍNH NĂNG NỔI BẬT */
+.feature-box {
+  border: 1px solid #eef0f2;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.btn-white {
-    background: white;
-    color: #222;
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.09) !important;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
+.feature-sun {
+  color: #ffd43b;
 }
 
-/* CÁC HOẠT ĐỘNG */
-.activities {
-    background: #f7f7fc;
-    padding: 35px 6%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+.feature-fish {
+  color: #74c0fc;
 }
 
-.activity {
-    background: white;
-    padding: 25px 18px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    transition: 0.3s;
+.feature-camera {
+  color: #63e6be;
 }
 
-.activity:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.activity-icon {
-    font-size: 35px;
-    margin-bottom: 8px;
-}
-
-.sun {
-    color: #ffc400;
-}
-
-.fish {
-    color: #55b6ed;
-}
-
-.boat {
-    color: #40d8b5;
-}
-
-.activity h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
-}
-
-.activity p {
-    font-size: 12px;
-    color: #667085;
-}
-
-.section {
-    padding: 35px 6%;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.section-heading h2 {
-    color: #1473f9;
-    font-size: 25px;
-    margin-bottom: 5px;
-}
-
-.section-heading p {
-    color: #667085;
-    font-size: 12px;
-}
-
-.destinations {
-    background: white;
-}
-
-.destination-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
+/* 5. THẺ ĐIỂM ĐẾN */
 .destination-card {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: 0.3s;
+  border: 0;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .destination-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12) !important;
 }
 
-.destination-card img {
-    display: block;
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
+/* Ảnh các thẻ có cùng kích thước */
+.card-img-custom {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.card-content {
-    padding: 14px;
+.card-title {
+  color: #173f72;
 }
 
-.card-content h3 {
-    font-size: 16px;
-    margin-bottom: 7px;
+/* 6. KHỐI ẨM THỰC */
+.food-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
 }
 
-.card-content p {
-    font-size: 12px;
-    color: #667085;
-    margin-bottom: 12px;
+.text-star {
+  color: rgb(12, 176, 126);
 }
 
-.tag {
-    display: inline-block;
-    background: #1473f9;
-    color: white;
-    font-size: 10px;
-    padding: 3px 9px;
-    border-radius: 12px;
-    margin-right: 5px;
+/* 7. KHỐI KHÁCH SẠN */
+.stay-box {
+  background: #f7f9fc;
+  border: 1px solid #e8edf3;
+  transition: transform 0.2s ease;
 }
 
-.tag.green {
-    background: #16a765;
+.stay-box:hover {
+  transform: translateY(-3px);
 }
 
-.food {
-    background: #f7f7fc;
+/* 8. KHỐI LÊN LỊCH TRÌNH */
+.itinerary-section {
+  background:
+    linear-gradient(rgba(0, 55, 105, 0.82), rgba(0, 55, 105, 0.82)),
+    url("image/baibien.webp") center/cover no-repeat;
 }
 
-.food-content {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 30px;
-    align-items: center;
-}
-
-.food-image img {
-    width: 100%;
-    height: 360px;
-    object-fit: cover;
-    border-radius: 6px;
-    display: block;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.food-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.food-item h3 {
-    font-size: 16px;
-    margin-bottom: 7px;
-}
-
-.food-item h3 span {
-    color: white;
-    background: #16b981;
-    display: inline-flex;
-    width: 20px;
-    height: 20px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 12px;
-    margin-right: 7px;
-}
-
-.food-item p {
-    color: #667085;
-    font-size: 13px;
-    padding-left: 28px;
-}
-
-.hotel {
-    background: white;
-    text-align: center;
-}
-
-.hotel-text {
-    font-size: 14px;
-    color: #667085;
-}
-
+/* 9. CHÂN TRANG */
 footer {
-    background: #20242c;
-    color: white;
-    padding: 35px 7%;
-    display: grid;
-    grid-template-columns: 1.5fr 0.8fr 1.2fr;
-    gap: 35px;
+  line-height: 1.7;
 }
 
-.footer-column h3 {
-    font-size: 14px;
-    margin-bottom: 12px;
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  padding: 3px 0;
+  transition: color 0.2s ease;
 }
 
-.footer-column p {
-    color: #d1d5db;
-    font-size: 12px;
-    margin-bottom: 5px;
+.footer-links a:hover {
+  color: #ffdf70;
 }
 
-.footer-column > a {
-    display: block;
-    color: #d1d5db;
-    font-size: 12px;
-    margin-bottom: 5px;
+/* 10. RESPONSIVE CHO MÁY TÍNH BẢNG */
+@media (max-width: 991.98px) {
+  .navbar {
+    padding-left: 1rem !important;
+  }
+
+  .navbar-nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .hero-section {
+    min-height: 65vh;
+  }
 }
 
-.footer-column a:hover {
-    color: #ffc400;
+/* 11. RESPONSIVE CHO ĐIỆN THOẠI */
+@media (max-width: 767.98px) {
+  .hero-section {
+    min-height: 560px;
+    padding: 55px 0;
+    background-position: center;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+  }
+
+  .card-img-custom {
+    height: 230px;
+  }
+
+  section.py-5 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
 }
 
-.social-links {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+/* =========================
+   KHÁCH SẠN
+   ========================= */
+
+.hotel-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.social-links a {
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 11px;
+.hotel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
 }
 
-.facebook {
-    background: #1877f2;
+.hotel-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
 }
 
-.twitter {
-    background: #159c78;
+.hotel-price {
+  color: #dc3545;
+  font-weight: bold;
+  font-size: 1.05rem;
 }
 
-.youtube {
-    background: #e62117;
+/* =========================
+   ĐÁNH GIÁ DU KHÁCH
+   ========================= */
+
+.review-card {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .header {
-        height: auto;
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 12px;
-    }
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1) !important;
+}
 
-    .menu {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0d6efd;
+  flex-shrink: 0;
+}
 
-    .hero {
-        min-height: 320px;
-    }
+/* Ảnh trên điện thoại */
+@media (max-width: 767.98px) {
+  .hotel-image {
+    height: 220px;
+  }
 
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .activities,
-    .destination-list {
-        grid-template-columns: 1fr;
-    }
-
-    .food-content {
-        grid-template-columns: 1fr;
-    }
-
-    .food-image img {
-        height: 280px;
-    }
-
-    footer {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
+  .review-card {
+    padding: 20px !important;
+  }
 }
